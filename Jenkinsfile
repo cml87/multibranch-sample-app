@@ -13,20 +13,14 @@ pipeline {
     }
     
     stage ('Cat README') {
-  
       when {
-        branch "fix-*"
-      }
-
+        branch "fix-*"  // this stage will be executed only for the branches
+      }                 // matching this pattern
       steps {
         sh '''
   	      cat README.md
   	    '''
       }
-
     }
-
-
-    
   }
 }
